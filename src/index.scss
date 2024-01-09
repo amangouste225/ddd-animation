@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// STYLES CSS
+
+:root {
+  --gray: #666;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
+}
+
+html,
+body {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: clamp(16px, 1vw, 20px);
+  overflow: hidden;
+  display: inline;
+  height: 100vh;
+}
+
+.container {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  .wrapper {
+    background-color: black;
+    position: relative;
+    height: 100vh;
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 50px;
+      padding-top: 2rem;
+      &_logo {
+        max-width: 75px;
+        width: 75px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .nav_btn {
+        position: relative;
+        border: 2px solid;
+        background-color: #fff;
+        display: flex;
+        border-radius: 50px;
+        align-items: center;
+        padding: 25px 40px;
+        justify-content: center;
+        width: 200px;
+        overflow: hidden;
+        .btn_inner {
+          text-transform: uppercase;
+          font-size: 17px;
+          letter-spacing: -0.02rem;
+          font-weight: 700;
+          font-family: "Barlow Condensed", sans-serif;
+          position: absolute;
+          z-index: 90;
+        }
+        .circle {
+          width: 230px;
+          height: 230px;
+          background-color: var(--gray);
+          border-radius: 50%;
+          position: absolute;
+          left: -10px;
+          bottom: -300px;
+          z-index: 1;
+        }
+      }
+    }
+    .main {
+      margin: 0 auto;
+      color: white;
+      position: relative;
+      h1 {
+        text-align: center;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 0;
+        text-transform: uppercase;
+        span {
+          display: block;
+          &:nth-child(1),
+          &:nth-child(3) {
+            font-size: 15px;
+            letter-spacing: 6px;
+          }
+          &:nth-child(2) {
+            font-size: 40px;
+            padding: 10px 0;
+            letter-spacing: 8px;
+          }
+        }
+      }
+    }
+    .footer {
+      position: absolute;
+      bottom: 6%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 50px;
+      right: 0;
+      left: 0;
+      width: 100%;
+      justify-content: space-between;
+      align-items: end;
+
+      &_btn {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        .btn_wrapper {
+          width: fit-content;
+          padding: 2%;
+          border-radius: 50px;
+          display: flex;
+          justify-content: center;
+          background-color: var(--gray);
+          overflow: hidden;
+        }
+        .btn_black {
+          padding: 20px 40px;
+          border-radius: 50px;
+          border: none;
+          text-transform: uppercase;
+          font-size: 20px;
+          letter-spacing: -0.01rem;
+          font-weight: 700;
+          font-family: "Barlow Condensed", sans-serif;
+          color: white;
+          background-color: var(--gray);
+          position: relative;
+          outline: 3px solid white;
+          transition: all 0.3s cubic-bezier(0.41, 0, 0.09, 1);
+          &:hover {
+            background-color: var(--gray);
+            outline: 15px solid white;
+          }
+          &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            border-radius: 50px;
+          }
+        }
+      }
+      &_privacy {
+        display: block;
+        &.made {
+          justify-self: end;
+        }
+        a {
+          color: var(--gray);
+          &:hover {
+            text-shadow: 0 0 4px #fff;
+            transition: opacity 0.25s ease-in-out;
+            color: white;
+          }
+
+          &:link,
+          &:active {
+            font-size: 15px;
+            text-transform: capitalize;
+            text-decoration: none;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    color: white;
+    font-weight: bold;
+    padding: 0 5px;
+    text-decoration: underline;
+  }
+}
