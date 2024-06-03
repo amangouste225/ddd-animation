@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import logo from "./assets/images/logo1.jpg";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -75,7 +75,7 @@ function App() {
           ".form",
           {
             y: "200px",
-            ease: "back",
+            ease: "expo.inOut",
             stagger: 0.05,
           },
           "<"
@@ -179,9 +179,6 @@ function App() {
     >
       <div className="blue1">
         <div className="content">
-          <div className="btn_close" onClick={onClicked}>
-            <RxCross1 size="25" />
-          </div>
           <div className="content-wrapper">
             <h1 className="content_title"> {getChars("join the")}</h1>
             <h1 className="content_title"> {getChars("waitlist")}</h1>
@@ -195,11 +192,18 @@ function App() {
             <button>no spam</button>
             <button>unscribe anytime</button>
           </div>
-          <form className="form">
+          <form
+            className="form"
+            action="#"
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
             <input
               type="text"
               placeholder="insert your email"
               className="input"
+              required
             />
             <button>subscribe</button>
           </form>
@@ -223,6 +227,9 @@ function App() {
                 Global meeting point of digital design industry
               </span>
             </div>
+          </div>
+          <div className="btn_close" onClick={onClicked}>
+            <RxCross1 size="25" />
           </div>
           <div className="nav_btn">
             <div className="btn_inner">

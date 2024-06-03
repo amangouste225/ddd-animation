@@ -77,15 +77,6 @@ body {
         overflow: hidden;
         color: white;
       }
-      .btn_close {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        z-index: 999999;
-      }
       h1 {
         font-size: 9.9rem;
         color: white;
@@ -216,6 +207,16 @@ body {
       position: absolute;
       width: 100%;
       z-index: 9999;
+
+      .btn_close {
+        cursor: pointer;
+        background-color: white;
+        padding: 10px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
       &_logo {
         max-width: 250px;
